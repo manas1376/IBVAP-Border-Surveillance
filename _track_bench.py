@@ -1,19 +1,4 @@
-"""
-Controlled tracking-stability measurement.
 
-Runs the same footage through the detector+tracker under different settings and
-reports the metrics that matter for "detection is unpredictable":
-
-* detections/frame            -- recall
-* distinct track ids          -- lower is better for the same scene content
-* ids per detection           -- the churn ratio; 1.0 would mean every
-                                 detection got its own id (worst case)
-* mean track lifetime         -- how long an identity survives
-* fragmentation               -- tracks that lived < 5 frames (ghosts)
-
-Also simulates FAST motion by sampling every Nth frame, which multiplies
-inter-frame displacement exactly as a fast vehicle does.
-"""
 import argparse
 import statistics
 import sys
